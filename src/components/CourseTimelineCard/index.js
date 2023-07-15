@@ -19,7 +19,7 @@ const CourseTimelineCard = props => {
       <p>{description}</p>
       <ul>
         {tagsList.map(item => (
-          <li key={item.id}>{item.name}</li>
+          <p key={item.id}>{item.name}</p>
         ))}
       </ul>
     </div>

@@ -28,8 +28,8 @@ const TimelineView = props => {
 
   return (
     <div>
-      <h1>MY JOURNEY OF</h1>
-      <h1>CCBP 4.0</h1>
+      <h1>MY JOURNEY OF CCBP 4.0</h1>
+
       <div className="chrono-container">
         <Chrono mode="VERTICAL_ALTERNATING" items={itemsList}>
           {timelineItemsList.map(each => (

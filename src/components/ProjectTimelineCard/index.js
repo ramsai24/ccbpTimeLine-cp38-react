@@ -10,7 +10,7 @@ const ProjectTimelineCard = props => {
 
   return (
     <div>
-      <img className="project-img" src={imageUrl} alt={projectTitle} />
+      <img className="project-img" src={imageUrl} alt="project" />
       <div>
         <h1>{projectTitle}</h1>
         <div>
