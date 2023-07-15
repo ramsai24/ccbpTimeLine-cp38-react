@@ -4,14 +4,17 @@ import './index.css'
 
 const CourseTimelineCard = props => {
   const {data} = props
-  console.log(data)
+  //   console.log(data)
   const {courseTitle, description, duration, tagsList} = data
 
   return (
     <div>
       <div>
         <h1>{courseTitle}</h1>
-        <AiFillClockCircle>{duration}</AiFillClockCircle>
+        <div>
+          <AiFillClockCircle />
+          <p>{duration}</p>
+        </div>
       </div>
       <p>{description}</p>
       <ul>

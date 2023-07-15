@@ -1,25 +1,27 @@
-// // Write your code here
-// import {AiFillClockCircle} from 'react-icons/ai'
-// import './index.css'
+// Write your code here
 
-// const ProjectTimelineCard = props => {
-//   const {data} = props
-//   const {courseTitle, description, duration, tagsList} = data
+import {AiFillCalendar} from 'react-icons/ai'
+import './index.css'
 
-//   return (
-//     <div>
-//       <div>
-//         <h1>{courseTitle}</h1>
-//         <AiFillClockCircle>{duration}</AiFillClockCircle>
-//       </div>
-//       <p>{description}</p>
-//       <ul>
-//         {tagsList.map(each => (
-//           <li key={each.id}>{each}</li>
-//         ))}
-//       </ul>
-//     </div>
-//   )
-// }
+const ProjectTimelineCard = props => {
+  const {data} = props
+  console.log(data)
+  const {projectTitle, projectUrl, imageUrl, description, duration} = data
 
-// export default ProjectTimelineCard
+  return (
+    <div>
+      <img className="project-img" src={imageUrl} alt={projectTitle} />
+      <div>
+        <h1>{projectTitle}</h1>
+        <div>
+          <AiFillCalendar />
+          <p>{duration}</p>
+        </div>
+        <p>{description}</p>
+        <a href={projectUrl}>Visit</a>
+      </div>
+    </div>
+  )
+}
+
+export default ProjectTimelineCard

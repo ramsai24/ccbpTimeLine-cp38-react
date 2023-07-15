@@ -20,7 +20,7 @@ const TimelineView = props => {
       case 'COURSE':
         return <CourseTimelineCard data={each} />
       case 'PROJECT':
-        return null
+        return <ProjectTimelineCard data={each} />
       default:
         return null
     }
