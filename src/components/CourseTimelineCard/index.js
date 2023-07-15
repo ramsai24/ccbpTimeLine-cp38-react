@@ -3,7 +3,9 @@ import {AiFillClockCircle} from 'react-icons/ai'
 import './index.css'
 
 const CourseTimelineCard = props => {
-  const {courseTitle, description, duration, tagsList} = props
+  const {data} = props
+  console.log(data)
+  const {courseTitle, description, duration, tagsList} = data
 
   return (
     <div>
@@ -13,8 +15,8 @@ const CourseTimelineCard = props => {
       </div>
       <p>{description}</p>
       <ul>
-        {tagsList.map(each => (
-          <li key={each.id}>{each}</li>
+        {tagsList.map(item => (
+          <li key={item.id}>{item.name}</li>
         ))}
       </ul>
     </div>

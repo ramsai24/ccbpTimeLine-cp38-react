@@ -9,14 +9,18 @@ const TimelineView = props => {
   const {timelineItemsList} = props
   console.log(timelineItemsList)
 
+  const itemsList = timelineItemsList.map(each => ({title: each.title}))
+  //   console.log(itemsList)
+
   const renderSwitch = each => {
     const {categoryId} = each
     console.log(categoryId)
+    // console.log(each)
     switch (categoryId) {
       case 'COURSE':
-        return <CourseTimelineCard />
+        return <CourseTimelineCard data={each} />
       case 'PROJECT':
-        return <ProjectTimelineCard />
+        return null
       default:
         return null
     }
@@ -26,15 +30,14 @@ const TimelineView = props => {
     <div>
       <h1>MY JOURNEY OF</h1>
       <h1>CCBP 4.0</h1>
-      <div>
-        {timelineItemsList.map(each => {
-          const {title} = each
-          return (
-            <Chrono key={each.id} mode="VERTICAL_ALTERNATING" items={title}>
-              {renderSwitch(each)}
-            </Chrono>
-          )
-        })}
+      <div className="chrono-container">
+        <Chrono mode="VERTICAL_ALTERNATING" items={itemsList}>
+          <div>
+            {timelineItemsList.map(each => (
+              <li key={each.id}>{renderSwitch(each)}</li>
+            ))}
+          </div>
+        </Chrono>
       </div>
     </div>
   )
