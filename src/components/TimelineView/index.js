@@ -32,11 +32,9 @@ const TimelineView = props => {
       <h1>CCBP 4.0</h1>
       <div className="chrono-container">
         <Chrono mode="VERTICAL_ALTERNATING" items={itemsList}>
-          <div>
-            {timelineItemsList.map(each => (
-              <li key={each.id}>{renderSwitch(each)}</li>
-            ))}
-          </div>
+          {timelineItemsList.map(each => (
+            <li key={each.id}>{renderSwitch(each)}</li>
+          ))}
         </Chrono>
       </div>
     </div>
